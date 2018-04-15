@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from './logo.svg';
 import './Conversation.css';
 
-
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class Conversation extends Component {
 
@@ -29,7 +29,6 @@ class Conversation extends Component {
 
 
     updateInputValue = evt => {
-
         this.setState(prevState =>
             ({
                 inputfield: evt.target.value,
@@ -45,11 +44,11 @@ class Conversation extends Component {
               { this.state.conversation_lines.map(function(conversation_line, index) {
                   return <p className="conversation_line"  > { conversation_line } </p>
               })}
-              <form>
+              <Form>
                   <Label for="conv_line_input">Conversation Line</Label>
-                  <input name="conv_line" id="conv_line_input" type="text" onChange={this.updateInputValue}  />
+                  <Input name="conv_line" id="conv_line_input" type="text" onChange={this.updateInputValue}  />
                   <Button id="add_conversation_button"  onClick={this.handleClick} type="submit">Submit</Button>
-              </form>
+              </Form>
 
           </div>
     );
