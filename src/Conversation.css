@@ -1,0 +1,16 @@
+.question {
+    color: black;
+}
+
+.answer {
+    color: purple;
+    padding-left: 30px;
+
+}
+
+.conv {
+    position: fixed ;
+    height: 120px;
+    left: 0;
+
+}
