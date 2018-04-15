@@ -27,11 +27,14 @@ class Conversation extends Component {
         e.preventDefault()
     }
 
-
     updateInputValue = evt => {
+        console.log(evt)
+        console.log(evt.target)
+        console.log(evt.target.value)
+        let evalue = evt.target.value
         this.setState(prevState =>
             ({
-                inputfield: evt.target.value,
+                inputfield: evalue,
                 conversation_lines : prevState.conversation_lines
             }
         ))
@@ -46,7 +49,7 @@ class Conversation extends Component {
               })}
               <Form>
                   <Label for="conv_line_input">Conversation Line</Label>
-                  <Input name="conv_line" id="conv_line_input" type="text" onChange={this.updateInputValue}  />
+                  <Input name="conv_line" id="conv_line_input" type="text" onChange={this.updateInputValue}   />
                   <Button id="add_conversation_button"  onClick={this.handleClick} type="submit">Submit</Button>
               </Form>
 
