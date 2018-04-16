@@ -8,9 +8,11 @@
 
 }
 
-.conv {
-    position: fixed ;
-    height: 120px;
-    left: 0;
+.enter_question {
+    height: 15%;
+    padding-bottom: 15px;
+}
 
+.conv_history {
+    height: 85%;
 }
