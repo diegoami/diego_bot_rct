@@ -34,10 +34,13 @@ class Conversation extends Component {
                 console.log(data)
                 var text = data[0]["text"]
                 this.setState(prevState => ({
-                    conversation_lines : [...prevState.conversation_lines, { "question" : prevState.inputfield, "answer" : text } ]
+                    conversation_lines : [...prevState.conversation_lines, { "question" : prevState.inputfield, "answer" : text } ],
+                    inputfield : ""
                 }))
                 console.log(this.state.conversation_lines)
-            })
+
+
+           })
     }
 
     updateInputValue = evt => {
@@ -64,7 +67,7 @@ class Conversation extends Component {
               })}
               <Form className="conv_form">
                   <Label for="conv_line_input">Type your message</Label>
-                  <Input name="conv_line" id="conv_line_input" type="text" onChange={this.updateInputValue}   />
+                  <Input name="conv_line" id="conv_line_input" type="text" value={this.state.inputfield}  onChange={this.updateInputValue}   />
                   <Button id="add_conversation_button"  onClick={this.handleClick} type="submit">Submit</Button>
               </Form>
 
